@@ -1,0 +1,156 @@
+.main-container {
+  background-image: url("Japan.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-position-x: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+}
+
+#current-temp {
+  display: flex;
+}
+
+.block {
+  max-width: 600px;
+  padding: 24px 60px;
+  background-color: #c2d8b9;
+  border-radius: 8px;
+  position: static;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 50px auto;
+  margin-bottom: 0px;
+  opacity: 0.95;
+}
+
+#search-button {
+  background-color: #06a77d;
+  color: #f5f3f5;
+  border-color: #06a77d;
+}
+
+#current-loc {
+  border-width: 2px;
+}
+
+.btn.btn-secondary.celsius #celsius {
+  color: #f5f3f5;
+  border-color: #06a77d;
+  text-decoration: none;
+  display: flex;
+}
+
+.btn.btn-secondary.fa,
+#fahrenheit {
+  color: #f5f3f5;
+  border-color: #06a77d;
+  text-decoration: none;
+  display: flex;
+}
+
+.btn-secondary:hover {
+  background-color: #06a77d;
+  color: #f5f3f5;
+  border-color: #06a77d;
+  display: flex;
+}
+
+.fc {
+  text-align: center;
+  padding: 16px;
+  color: #496066;
+  transform: all 200ms ease-in-out;
+  width: 100px;
+}
+
+.fc:hover {
+  background-color: #06a77d;
+  opacity: 0.9;
+  border-radius: 8px;
+  color: #f5f3f5;
+  width: 100px;
+}
+
+.day {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+}
+
+.selectedCity {
+  font-family: "Manrope", sans-serif;
+  font-weight: 900;
+  color: #06a77d;
+  text-transform: lowercase;
+}
+
+.selectedCity::first-letter {
+  text-transform: capitalize;
+}
+
+strong,
+#date {
+  color: #496066;
+  font-weight: 600;
+}
+
+p {
+  font-size: 14px;
+}
+
+.forecast {
+  margin-top: 24px;
+}
+
+.right {
+  padding: 16px 0px 0px 64px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+}
+
+.precipitation,
+.humidity,
+.wind,
+.lati,
+.longi {
+  color: #496066;
+}
+
+.fa-arrows-rotate {
+  color: #06a77d;
+  font-size: 16px;
+  padding-bottom: 16px;
+  display: inline;
+}
+
+.number {
+  color: #32322c;
+  font-size: 80px;
+  font-weight: 900;
+  font-family: "Manrope", sans-serif;
+  width: fit-content;
+}
+
+.btn-group {
+  font-family: "Manrope", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  padding: 4px;
+  color: #496066;
+  transform: all 200ms ease-in-out;
+  width: fit-content;
+  height: fit-content;
+}
+
+.container {
+  padding-left: 0px 0px 0px 8px;
+}

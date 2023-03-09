@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/dbabf4a3ab.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Today's Weather</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="block">
+        <form id="choose-city">
+          <div class="container2">
+            <div class="row">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city-search"
+                  placeholder="Choose a city"
+                  aria-describedby="button-addon2"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    id="search-button"
+                  >
+                    Search
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="row">
+          <div class="col-6 left">
+            <span
+              ><h3 class="selectedCity" id="city-searched">
+                Tokyo, Japan
+              </h3></span
+            >
+            <p id="date">January 01, 2023</p>
+            <div class="container">
+              <div class="row">
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <h2 class="number" id="current-temp">15</h2>
+                    </div>
+                    <div class="col">
+                      <div
+                        class="btn-group"
+                        role="group"
+                        aria-label="Basic example"
+                      >
+                        <button type="button" class="btn btn-secondary celsius">
+                          <a href="#" id="celsius"> °C </a>
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-secondary fahrenheit"
+                        >
+                          <a href="#" id="fahrenheit"> °F </a>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 right">
+            <p class="lati">Latitude: <strong id="lat">1.0</strong></p>
+            <p class="longi">Longitude: <strong id="long">1.0</strong></p>
+            <p class="precipitation">Precipitation: <strong>1</strong></p>
+            <p class="humidity">Humidity: <strong>10%</strong></p>
+            <p class="wind">Wind: <strong>1.5km/h</strong></p>
+          </div>
+        </div>
+        <div class="container forecast">
+          <div class="row">
+            <div class="col fc">
+              <p class="mon day">MON</p>
+              <i class="fas fa-solid fa-cloud-sun"></i>
+            </div>
+            <div class="col fc">
+              <p class="tue day">TUE</p>
+              <i class="fas fa-regular fa-snowflake"></i>
+            </div>
+            <div class="col fc">
+              <p class="wed day">WED</p>
+              <i class="fas fa-solid fa-sun"></i>
+            </div>
+            <div class="col fc">
+              <p class="thu day">THU</p>
+              <i class="fas fa-solid fa-cloud-bolt"></i>
+            </div>
+            <div class="col fc">
+              <p class="fri day">FRI</p>
+              <i class="fas fa-solid fa-sun"></i>
+            </div>
+            <div class="col fc">
+              <p class="sat day">SAT</p>
+              <i class="fas fa-solid fa-cloud"></i>
+            </div>
+            <div class="col fc">
+              <p class="sun day">SUN</p>
+              <i class="fas fa-solid fa-cloud-rain"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"
+      ></script>
+      <script src="src/index.js"></script>
+    </div>
+  </body>
+</html>
