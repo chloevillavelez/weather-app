@@ -120,7 +120,8 @@ p {
 .humidity,
 .wind,
 .lati,
-.longi {
+.longi,
+#tag {
   color: #496066;
 }
 
@@ -153,4 +154,10 @@ p {
 
 .container {
   padding-left: 0px 0px 0px 8px;
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
