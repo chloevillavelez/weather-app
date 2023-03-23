@@ -1,36 +1,25 @@
-let now = new Date();
-
-let schedule = document.querySelector("#date");
-let date = now.getDate();
-let hours = now.getHours();
-
-let minutes = now.getMinutes(); // add this to next HW output
-if (minutes < 10) {
-  minutes = `0${minutes}`;
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
-
-let year = now.getFullYear();
-
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[now.getDay()]; // 0 and 6
-
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[now.getMonth()]; // 0 and 11
-
-schedule.innerHTML = `${day} ${month} ${date}, ${year} ${hours}:${minutes}`;
 
 // Searching for City typed in Search Bar
 function search(event) {
@@ -41,11 +30,23 @@ function search(event) {
 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric&appid=2ff317fbbf031c75547856bb3b8a124d`;
 
-  // Searching for name, temperature, and coordinates of City typed in Search Bar
+  // Searching for name, temperature, weather details, and coordinates of City typed in Search Bar
   function showDetails(response) {
     let temp = Math.round(response.data.main.temp);
     let currentTemp = document.querySelector("#current-temp");
     currentTemp.innerHTML = `${temp}`;
+
+    let description = document.querySelector(".dsc");
+    description.innerHTML = response.data.weather[0].description;
+
+    let humidity = document.querySelector("#hum");
+    humidity.innerHTML = response.data.main.humidity;
+
+    let speed = document.querySelector("#windy");
+    speed.innerHTML = response.data.wind.speed;
+
+    let date = document.querySelector("#time");
+    date.innerHTML = formatDate(response.data.dt * 1000);
 
     let lat = response.data.coord.lat;
     let long = response.data.coord.lon;

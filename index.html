@@ -54,7 +54,7 @@
         <div class="row">
           <div class="col-6 left">
             <span><h3 class="selectedCity" id="city-searched">Tokyo</h3></span>
-            <p id="date">January 01, 2023</p>
+            <p id="date">Last updated: <span id="time"></span></p>
             <div class="container">
               <div class="row">
                 <div class="container">
@@ -86,11 +86,16 @@
           </div>
 
           <div class="col-6 right">
+            <p class="dsc">Clear Sky</p>
             <p class="lati">Latitude: <strong id="lat">1.0</strong></p>
             <p class="longi">Longitude: <strong id="long">1.0</strong></p>
             <p class="precipitation">Precipitation: <strong>1</strong></p>
-            <p class="humidity">Humidity: <strong>10%</strong></p>
-            <p class="wind">Wind: <strong>1.5km/h</strong></p>
+            <p class="humidity">
+              Humidity: <strong><span id="hum"></span>%</strong>
+            </p>
+            <p class="wind">
+              Wind: <strong><span id="windy"></span>km/h</strong>
+            </p>
           </div>
         </div>
         <div class="container forecast">

@@ -92,7 +92,8 @@
   text-transform: lowercase;
 }
 
-.selectedCity::first-letter {
+.selectedCity::first-letter,
+.dsc {
   text-transform: capitalize;
 }
 
@@ -121,7 +122,8 @@ p {
 .wind,
 .lati,
 .longi,
-#tag {
+#tag,
+.dsc {
   color: #496066;
 }
 
