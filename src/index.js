@@ -32,7 +32,9 @@ function search(event) {
 
   // Searching for name, temperature, weather details, and coordinates of City typed in Search Bar
   function showDetails(response) {
-    let temp = Math.round(response.data.main.temp);
+    celsiusTemp = response.data.main.temp;
+
+    let temp = Math.round(celsiusTemp);
     let currentTemp = document.querySelector("#current-temp");
     currentTemp.innerHTML = `${temp}`;
 
@@ -66,8 +68,25 @@ function search(event) {
   axios.get(apiUrl).then(showDetails);
 }
 
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = Math.round(celsiusTemp);
+}
+
 let button = document.querySelector("#search-button");
 button.addEventListener("click", search);
+
+let celsiusTemp = null;
 
 let form = document.querySelector("#choose-city");
 form.addEventListener("submit", search);
@@ -79,3 +98,9 @@ citySearch.addEventListener("keyup", function (event) {
     document.getElementById("search-button").click();
   }
 });
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);

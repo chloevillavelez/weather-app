@@ -37,6 +37,12 @@
   font-size: 80px;
 }
 
+#fahrenheit-link,
+#celsius-link {
+  text-decoration: none;
+  color: white;
+}
+
 .block {
   max-width: 600px;
   padding: 24px 60px;
@@ -59,26 +65,32 @@
   border-width: 2px;
 }
 
-.btn.btn-secondary.celsius #celsius {
-  color: #f5f3f5;
-  border-color: #06a77d;
-  text-decoration: none;
-  display: flex;
+.btn-group-sm .btn-secondary:active {
+  background-color: gray;
 }
 
-.btn.btn-secondary.fa,
-#fahrenheit {
-  color: #f5f3f5;
-  border-color: #06a77d;
-  text-decoration: none;
-  display: flex;
-}
-
-.btn-secondary:hover {
+.btn.celsius:hover {
   background-color: #06a77d;
-  color: #f5f3f5;
+  color: white;
   border-color: #06a77d;
-  display: flex;
+}
+
+.btn.celsius:active {
+  background-color: #06a77d;
+  color: white;
+  border-color: #06a77d;
+}
+
+.btn.fahrenheit:hover {
+  background-color: #06a77d;
+  color: white;
+  border-color: #06a77d;
+}
+
+.btn.fahrenheit:active {
+  background-color: #06a77d;
+  color: white;
+  border-color: #06a77d;
 }
 
 .fc {
