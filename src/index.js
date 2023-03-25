@@ -48,6 +48,13 @@ function search(event) {
     let date = document.querySelector("#time");
     date.innerHTML = formatDate(response.data.dt * 1000);
 
+    let icon = document.querySelector("#icon");
+    icon.setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+    icon.setAttribute("alt", response.data.weather[0].description);
+
     let lat = response.data.coord.lat;
     let long = response.data.coord.lon;
     let latitude = document.querySelector("#lat");

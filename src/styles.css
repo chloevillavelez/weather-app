@@ -17,7 +17,24 @@
 }
 
 #current-temp {
-  display: flex;
+  margin: 8px;
+}
+
+#icon {
+  float: left;
+}
+
+.full-details {
+  display: flex; /* make the container a flex container */
+  align-items: center; /* center the flex items vertically */
+}
+
+#icon {
+  margin-right: 10px; /* add some margin to separate the two elements */
+}
+
+.main-icon {
+  font-size: 80px;
 }
 
 .block {
@@ -139,7 +156,7 @@ p {
   font-size: 80px;
   font-weight: 900;
   font-family: "Manrope", sans-serif;
-  width: fit-content;
+  width: 100%;
 }
 
 .btn-group {
