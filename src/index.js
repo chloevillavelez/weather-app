@@ -22,10 +22,12 @@ function formatDate(timestamp) {
 }
 
 // Searching for City typed in Search Bar
+
 function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#city-search");
   let city = document.querySelector("#city-searched");
+
   city.innerHTML = `${searchInput.value}`;
 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric&appid=2ff317fbbf031c75547856bb3b8a124d`;
@@ -104,3 +106,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+search("Tokyo");

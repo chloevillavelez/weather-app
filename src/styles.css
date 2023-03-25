@@ -3,13 +3,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
-  margin: 0 auto;
-  background-position-x: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,12 +21,12 @@
 }
 
 .full-details {
-  display: flex; /* make the container a flex container */
-  align-items: center; /* center the flex items vertically */
+  display: flex;
+  align-items: center;
 }
 
 #icon {
-  margin-right: 10px; /* add some margin to separate the two elements */
+  margin-right: 10px;
 }
 
 .main-icon {
@@ -65,23 +61,7 @@
   border-width: 2px;
 }
 
-.btn-group-sm .btn-secondary:active {
-  background-color: gray;
-}
-
-.btn.celsius:hover {
-  background-color: #06a77d;
-  color: white;
-  border-color: #06a77d;
-}
-
 .btn.celsius:active {
-  background-color: #06a77d;
-  color: white;
-  border-color: #06a77d;
-}
-
-.btn.fahrenheit:hover {
   background-color: #06a77d;
   color: white;
   border-color: #06a77d;
@@ -191,4 +171,5 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 12px;
 }
