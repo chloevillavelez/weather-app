@@ -26,48 +26,50 @@ function formatDate(timestamp) {
 function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#city-search");
-  let city = document.querySelector("#city-searched");
+  searchCity(searchInput.value);
+}
 
-  city.innerHTML = `${searchInput.value}`;
-
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric&appid=2ff317fbbf031c75547856bb3b8a124d`;
-
-  // Searching for name, temperature, weather details, and coordinates of City typed in Search Bar
-  function showDetails(response) {
-    celsiusTemp = response.data.main.temp;
-
-    let temp = Math.round(celsiusTemp);
-    let currentTemp = document.querySelector("#current-temp");
-    currentTemp.innerHTML = `${temp}`;
-
-    let description = document.querySelector(".dsc");
-    description.innerHTML = response.data.weather[0].description;
-
-    let humidity = document.querySelector("#hum");
-    humidity.innerHTML = response.data.main.humidity;
-
-    let speed = document.querySelector("#windy");
-    speed.innerHTML = response.data.wind.speed;
-
-    let date = document.querySelector("#time");
-    date.innerHTML = formatDate(response.data.dt * 1000);
-
-    let icon = document.querySelector("#icon");
-    icon.setAttribute(
-      "src",
-      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-    icon.setAttribute("alt", response.data.weather[0].description);
-
-    let lat = response.data.coord.lat;
-    let long = response.data.coord.lon;
-    let latitude = document.querySelector("#lat");
-    let longitude = document.querySelector("#long");
-    latitude.innerHTML = `${lat}`;
-    longitude.innerHTML = `${long}`;
-  }
-
+function searchCity(city) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=2ff317fbbf031c75547856bb3b8a124d`;
   axios.get(apiUrl).then(showDetails);
+}
+
+// Searching for name, temperature, weather details, and coordinates of City typed in Search Bar
+function showDetails(response) {
+  celsiusTemp = response.data.main.temp;
+
+  let city = document.querySelector("#city-searched");
+  city.innerHTML = response.data.name;
+
+  let temp = Math.round(celsiusTemp);
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = `${temp}`;
+
+  let description = document.querySelector(".dsc");
+  description.innerHTML = response.data.weather[0].description;
+
+  let humidity = document.querySelector("#hum");
+  humidity.innerHTML = response.data.main.humidity;
+
+  let speed = document.querySelector("#windy");
+  speed.innerHTML = response.data.wind.speed;
+
+  let date = document.querySelector("#time");
+  date.innerHTML = formatDate(response.data.dt * 1000);
+
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
+
+  let lat = response.data.coord.lat;
+  let long = response.data.coord.lon;
+  let latitude = document.querySelector("#lat");
+  let longitude = document.querySelector("#long");
+  latitude.innerHTML = `${lat}`;
+  longitude.innerHTML = `${long}`;
 }
 
 function displayFahrenheitTemp(event) {
@@ -107,4 +109,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
-search("Tokyo");
+searchCity("Tokyo");
