@@ -75,10 +75,11 @@
 
 #forecast-row {
   text-align: center;
-  padding: 16px;
+  padding: 8px;
+  margin: 8px;
   color: #496066;
   transform: all 200ms ease-in-out;
-  width: 100px;
+  width: 80px;
 }
 
 #forecast-row:hover {
@@ -86,7 +87,8 @@
   opacity: 0.9;
   border-radius: 8px;
   color: #f5f3f5;
-  width: 100px;
+  width: 80px;
+  margin: 8px;
 }
 
 .day {
