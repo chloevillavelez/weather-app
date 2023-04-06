@@ -73,7 +73,7 @@
   border-color: #06a77d;
 }
 
-.fc {
+#forecast-row {
   text-align: center;
   padding: 16px;
   color: #496066;
@@ -81,7 +81,7 @@
   width: 100px;
 }
 
-.fc:hover {
+#forecast-row:hover {
   background-color: #06a77d;
   opacity: 0.9;
   border-radius: 8px;
